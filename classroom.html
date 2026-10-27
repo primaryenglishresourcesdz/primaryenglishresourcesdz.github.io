@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Classroom Objects</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f9ff;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .object-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px;
+            width: 220px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: white;
+        }
+
+        .object-icon img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .object-card h2 {
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .listen-button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .listen-button:hover {
+            opacity: 0.8;
+        }
+
+        .bottom-buttons {
+            clear: both;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .bottom-buttons button {
+            padding: 10px 18px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .print-button {
+            background-color: #4a90e2;
+            color: white;
+        }
+
+        .print-button:hover {
+            background-color: #357abd;
+        }
+
+
+        /* PRINT VERSION */
+
+        @media print {
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                background-color: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            h1,
+            .listen-button,
+            .bottom-buttons,
+            .object-card h2 {
+                display: none;
+            }
+
+            .object-card {
+                width: 210mm;
+                height: 297mm;
+
+                margin: 0;
+                padding: 0;
+
+                border: none;
+                border-radius: 0;
+                background-color: white;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .object-card:last-of-type {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .object-icon {
+                width: 190mm;
+                height: 270mm;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .object-icon img {
+                width: 190mm;
+                height: 270mm;
+                object-fit: contain;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>📚 Classroom Objects</h1>
+
+
+    <!-- PEN -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/pen.png" alt="Pen">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Pen')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- PENCIL -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/pencil.png" alt="Pencil">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Pencil')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- PENCIL CASE -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/pencilcase.png" alt="Pencil Case">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Pencil case')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- BACKPACK -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/backpack.png" alt="Backpack">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Backpack')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- ERASER -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/eraser.png" alt="Eraser">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Eraser')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- RULER -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/ruler.png" alt="Ruler">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Ruler')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- BOOK -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/book.png" alt="Book">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Book')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- COPYBOOK -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/copybook.png" alt="Copybook">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Copybook')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- SHARPENER -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/sharpener.png" alt="Sharpener">
+        </div>
+
+        
+        <button class="listen-button" onclick="speak('Sharpener')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- SCISSORS -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/scissors.png" alt="Scissors">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Scissors')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- GLUE -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/glue.png" alt="Glue">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Glue')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- CRAYONS -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/crayons.png" alt="Crayons">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Crayons')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- WHITEBOARD -->
+
+    <div class="object-card">
+
+        <div class="object-icon">
+            <img src="images/whiteboard.png" alt="Whiteboard">
+        </div>
+
+        
+
+        <button class="listen-button" onclick="speak('Whiteboard')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <!-- BOTTOM BUTTONS -->
+
+    <div class="bottom-buttons">
+
+        <button onclick="window.location.href='sequence2.html'">
+            ← Back to Sequence 2
+        </button>
+
+        <button class="print-button" onclick="window.print()">
+            🖨️ Print Flashcards
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function speak(word) {
+
+            const speech = new SpeechSynthesisUtterance(word);
+
+            speech.lang = "en-US";
+
+            speechSynthesis.speak(speech);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

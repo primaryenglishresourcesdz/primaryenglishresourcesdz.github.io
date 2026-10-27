@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Party Objects</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .objects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .object-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .object-card img {
+            width: 250px;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        .object-card h2 {
+            color: #333;
+            margin: 15px 0;
+        }
+
+        .listen-button {
+            padding: 10px 18px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .listen-button:hover {
+            background: #555;
+        }
+
+        .print-button {
+            display: inline-block;
+            margin: 25px 10px 0;
+            padding: 12px 20px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 800px) {
+            .objects {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .objects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            h1,
+            body > p,
+            .object-card h2,
+            .listen-button,
+            .print-button,
+            .back-button {
+                display: none !important;
+            }
+
+            .objects {
+                display: block;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .object-card {
+                width: 210mm;
+                height: 297mm;
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                background: white;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .object-card:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .object-card img {
+                width: 190mm;
+                height: 270mm;
+                max-width: 190mm;
+                max-height: 270mm;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎂 Birthday Party Objects</h1>
+    <p>Learn the vocabulary of a birthday party</p>
+
+    <div class="objects">
+
+        <div class="object-card">
+            <img src="images/cake.png" alt="Cake">
+            
+            <button class="listen-button" onclick="speak('Cake')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="object-card">
+            <img src="images/juice.png" alt="Juice">
+            <h2>Juice</h2>
+            <button class="listen-button" onclick="speak('Juice')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="object-card">
+            <img src="images/ballons.png" alt="Balloons">
+            
+            <button class="listen-button" onclick="speak('Balloons')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="object-card">
+            <img src="images/sweets.png" alt="Sweets">
+            
+            <button class="listen-button" onclick="speak('Sweets')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="object-card">
+            <img src="images/glass.png" alt="Glass">
+            
+            <button class="listen-button" onclick="speak('Glass')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="object-card">
+            <img src="images/plate.png" alt="Plate">
+            
+            <button class="listen-button" onclick="speak('Plate')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="object-card">
+            <img src="images/candles.png" alt="Candles">
+            
+            <button class="listen-button" onclick="speak('Candles')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="object-card">
+            <img src="images/fork.png" alt="Fork">
+                        <button class="listen-button" onclick="speak('Fork')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="object-card">
+            <img src="images/spoon.png" alt="Spoon">
+            
+            <button class="listen-button" onclick="speak('Spoon')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="object-card">
+            <img src="images/knife.png" alt="Knife">
+            
+            <button class="listen-button" onclick="speak('Knife')">
+                🔊 Listen
+            </button>
+        </div>
+
+    </div>
+
+    <button class="print-button" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+    <br>
+
+    <a href="sequence6.html" class="back-button">
+        ← Back to Sequence 06
+    </a>
+
+    <script>
+        function speak(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-GB";
+            speech.rate = 0.8;
+            speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

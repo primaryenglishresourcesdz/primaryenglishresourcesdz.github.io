@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Primary School English Teacher Resources</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7fb;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 17px;
+        }
+
+        /* THREE-DOT MENU BUTTON */
+        .menu-button {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 8px;
+            width: 42px;
+            height: 42px;
+            font-size: 26px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .menu-button:hover {
+            background-color: #357abd;
+        }
+
+        /* DARK OVERLAY */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease,
+                        visibility 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* SLIDING SIDE MENU */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            max-width: 85%;
+            height: 100%;
+            background-color: white;
+            z-index: 1001;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            box-shadow: 3px 0 12px rgba(0, 0, 0, 0.15);
+            overflow-y: auto;
+        }
+
+        .side-menu.active {
+            transform: translateX(0);
+        }
+
+        /* MENU HEADER */
+        .menu-header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 25px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-header h2 {
+            margin: 0;
+            font-size: 23px;
+        }
+
+        .close-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        /* MENU LINKS */
+        .menu-links {
+            padding: 12px 0;
+        }
+
+        .menu-links a {
+            display: flex;
+            align-items: center;
+            padding: 17px 22px;
+            color: #333;
+            text-decoration: none;
+            font-size: 17px;
+            border-bottom: 1px solid #eeeeee;
+            transition: background-color 0.2s;
+        }
+
+        .menu-links a:hover {
+            background-color: #f0f6ff;
+            color: #357abd;
+        }
+
+        /* BLUE LINE ICONS */
+        .menu-links a span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            margin-right: 5px;
+            color: #4a90e2;
+            flex-shrink: 0;
+        }
+
+        .menu-links svg {
+            display: block;
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .years {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 25px;
+        }
+
+        .year-card {
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .year-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .year-card .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .year-card h3 {
+            margin: 10px 0;
+            font-size: 22px;
+        }
+
+        .year-card p {
+            color: #666;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            background-color: #e9eef5;
+            color: #666;
+        }
+
+        /* MOBILE SCREENS */
+        @media (max-width: 600px) {
+            header {
+                padding: 75px 15px 30px;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            .menu-button {
+                top: 15px;
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open menu"
+            aria-controls="sideMenu"
+            aria-expanded="false"
+            onclick="openMenu()">
+            &#8942;
+        </button>
+
+        <h1>📚 Primary School English Teacher Resources</h1>
+
+        <p>
+            Teaching materials, flashcards and activities
+            for primary school English
+        </p>
+
+    </header>
+
+    <!-- DARK BACKGROUND OVERLAY -->
+    <div
+        class="overlay"
+        id="overlay"
+        onclick="closeMenu()">
+    </div>
+
+    <!-- SIDE MENU -->
+    <nav
+        class="side-menu"
+        id="sideMenu"
+        aria-label="Main menu"
+        aria-hidden="true">
+
+        <div class="menu-header">
+
+            <h2>Menu</h2>
+
+            <button
+                class="close-button"
+                aria-label="Close menu"
+                onclick="closeMenu()">
+                &times;
+            </button>
+
+        </div>
+
+        <div class="menu-links">
+
+            <!-- HOME -->
+            <a href="index.html">
+                <span>
+                    <svg width="21" height="21"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <path d="m3 10 9-7 9 7"/>
+                        <path d="M5 9v12h14V9"/>
+                        <path d="M9 21v-7h6v7"/>
+                    </svg>
+                </span>
+                Home
+            </a>
+
+            <!-- ABOUT US -->
+            <a href="about.html">
+                <span>
+                    <svg width="21" height="21"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M12 11v5"/>
+                        <path d="M12 8h.01"/>
+                    </svg>
+                </span>
+                About Us
+            </a>
+
+            <!-- CONTACT US -->
+            <a href="contact.html">
+                <span>
+                    <svg width="21" height="21"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <rect x="3" y="5"
+                              width="18" height="14" rx="2"/>
+                        <path d="m3 7 9 6 9-6"/>
+                    </svg>
+                </span>
+                Contact Us
+            </a>
+
+            <!-- FEEDBACK -->
+            <a href="feedback.html">
+                <span>
+                    <svg width="21" height="21"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8
+                                 8.5 8.5 0 0 1-7.6 4.7
+                                 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7
+                                 a8.4 8.4 0 0 1-.9-3.8
+                                 8.5 8.5 0 0 1 4.7-7.6
+                                 8.4 8.4 0 0 1 3.8-.9h.5
+                                 a8.5 8.5 0 0 1 8 8z"/>
+                    </svg>
+                </span>
+                Feedback
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <h2>Choose a Year</h2>
+
+        <div class="years">
+
+            <a href="3ap.html" class="year-card">
+                <div class="icon">📘</div>
+                <h3>3rd Year Primary School</h3>
+                <p>3AP English resources</p>
+            </a>
+
+            <a href="4ap.html" class="year-card">
+                <div class="icon">📗</div>
+                <h3>4th Year Primary School</h3>
+                <p>4AP English resources</p>
+            </a>
+
+            <a href="5ap.html" class="year-card">
+                <div class="icon">📙</div>
+                <h3>5th Year Primary School</h3>
+                <p>5AP English resources</p>
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>📚 Primary School English Teacher Resource Repository</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const sideMenu = document.getElementById("sideMenu");
+        const overlay = document.getElementById("overlay");
+        const menuButton = document.getElementById("menuButton");
+
+        function openMenu() {
+            sideMenu.classList.add("active");
+            overlay.classList.add("active");
+
+            sideMenu.setAttribute("aria-hidden", "false");
+            menuButton.setAttribute("aria-expanded", "true");
+
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeMenu() {
+            sideMenu.classList.remove("active");
+            overlay.classList.remove("active");
+
+            sideMenu.setAttribute("aria-hidden", "true");
+            menuButton.setAttribute("aria-expanded", "false");
+
+            document.body.style.overflow = "";
+        }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>5AP - Sequence 02: My Hometown</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fdf6fb;
+            color: #333;
+        }
+
+        header {
+            background-color: #d63384;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .lessons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .lesson-card {
+            background-color: white;
+            padding: 25px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lesson-card img {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .lesson-card h2 {
+            font-size: 23px;
+            margin: 10px 0;
+        }
+
+        .lesson-card p {
+            color: #666;
+            margin: 5px 0 10px;
+        }
+
+        .resource-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            background-color: #d63384;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .resource-button:hover {
+            background-color: #b02a6f;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 35px auto 0;
+            padding: 12px 22px;
+            background-color: #d63384;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .back-button:hover {
+            background-color: #b02a6f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            background-color: #f5e5ef;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            .lessons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Sequence 02: My Hometown</h1>
+        <p>5th Year Primary School - English Teacher Resources</p>
+    </header>
+
+    <div class="container">
+
+        <div class="lessons">
+
+            <!-- Amenities -->
+            <div class="lesson-card">
+
+                <img src="images/amenities.png" alt="Amenities">
+
+                <h2>Amenities</h2>
+
+                <p>Flashcards for places and facilities in town.</p>
+
+                <a href="5ap-amenities.html" class="resource-button">
+                    View Resources
+                </a>
+
+            </div>
+
+            <!-- Prepositions -->
+            <div class="lesson-card">
+
+                <img src="images/prepositions.png" alt="Prepositions of Place">
+
+                <h2>Prepositions of Place</h2>
+
+                <p>Resources for describing where places are.</p>
+
+                <a href="5ap-prepositions.html" class="resource-button">
+                    View Resources
+                </a>
+
+            </div>
+
+            <!-- Directions -->
+            <div class="lesson-card">
+
+                <img src="images/directions.png" alt="Directions">
+
+                <h2>Directions</h2>
+
+                <p>Resources for asking for and giving directions.</p>
+
+                <a href="5ap-directions.html" class="resource-button">
+                    View Resources
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="5ap.html" class="back-button">
+            ← Back to 5AP
+        </a>
+
+    </div>
+
+    <footer>
+        <p>Primary School English Teacher Resources</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>4AP - Family Members</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7fb;
+            color: #333;
+        }
+
+        header {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .flashcards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 240px;
+            height: 240px;
+            object-fit: contain;
+        }
+
+        .card h2 {
+            margin: 15px 0;
+            font-size: 21px;
+        }
+
+        .listen-button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4a90e2;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .listen-button:hover {
+            background-color: #357abd;
+        }
+
+        .print-button {
+            display: block;
+            margin: 30px auto 0;
+            padding: 12px 22px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .print-button:hover {
+            background-color: #357abd;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto 0;
+            padding: 12px 22px;
+            background-color: #4a90e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            background-color: #e9eef5;
+            color: #666;
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            header,
+            .card h2,
+            .listen-button,
+            .print-button,
+            .back-button,
+            footer {
+                display: none !important;
+            }
+
+            .container {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .flashcards {
+                display: block;
+                margin: 0;
+                padding: 0;
+            }
+
+            .card {
+                box-sizing: border-box;
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 10mm;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                border-radius: 0;
+                box-shadow: none;
+                break-after: page;
+                page-break-after: always;
+            }
+
+            .card:last-child {
+                break-after: auto;
+                page-break-after: auto;
+            }
+
+            .card img {
+                display: block;
+                width: 190mm;
+                height: 270mm;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>👨‍👩‍👧‍👦 Family Members</h1>
+        <p>4th Year Primary School</p>
+    </header>
+
+    <div class="container">
+
+        <div class="flashcards">
+
+            <div class="card">
+                <img src="images/father.png" alt="Father">
+                
+                <button class="listen-button" onclick="speak('Father')">
+                    🔊 Listen
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="images/mother.png" alt="Mother">
+                
+                <button class="listen-button" onclick="speak('Mother')">
+                    🔊 Listen
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="images/grandfather.png" alt="Grandfather">
+                
+                <button class="listen-button" onclick="speak('Grandfather')">
+                    🔊 Listen
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="images/grandmother.png" alt="Grandmother">
+                
+                <button class="listen-button" onclick="speak('Grandmother')">
+                    🔊 Listen
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="images/sister.png" alt="Sister">
+                
+                <button class="listen-button" onclick="speak('Sister')">
+                    🔊 Listen
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="images/brother.png" alt="Brother">
+                
+                <button class="listen-button" onclick="speak('Brother')">
+                    🔊 Listen
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="images/uncle.png" alt="Uncle">
+                
+                <button class="listen-button" onclick="speak('Uncle')">
+                    🔊 Listen
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="images/aunt.png" alt="Aunt">
+                
+                <button class="listen-button" onclick="speak('Aunt')">
+                    🔊 Listen
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="images/cousins.png" alt="Cousins">
+                
+                <button class="listen-button" onclick="speak('Cousins')">
+                    🔊 Listen
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="images/niece.png" alt="Niece">
+                
+                <button class="listen-button" onclick="speak('Niece')">
+                    🔊 Listen
+                </button>
+            </div>
+
+            <div class="card">
+                <img src="images/nephew.png" alt="Nephew">
+                
+                <button class="listen-button" onclick="speak('Nephew')">
+                    🔊 Listen
+                </button>
+            </div>
+
+        </div>
+
+        <button class="print-button" onclick="window.print()">
+            🖨️ Print Flashcards
+        </button>
+
+        <a href="4ap-sequence1.html" class="back-button">
+            ← Back to Sequence 01
+        </a>
+
+    </div>
+
+    <footer>
+        <p>📚 Primary School English Teacher Resources</p>
+    </footer>
+
+    <script>
+        function speak(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-GB";
+            speech.rate = 0.8;
+            speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

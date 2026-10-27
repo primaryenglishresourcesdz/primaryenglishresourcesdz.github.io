@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3AP - Pets</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .pets {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .pet-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .pet-card img {
+            width: 250px;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        h2 {
+            margin-top: 15px;
+            font-size: 22px;
+        }
+
+        .listen-button {
+            margin-top: 10px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            background: #333;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .listen-button:hover {
+            background: #555;
+        }
+
+        .print-button {
+            display: inline-block;
+            margin: 35px 10px 0;
+            padding: 12px 20px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 12px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 900px) {
+            .pets {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .pets {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            h1,
+            body > p,
+            .pet-card h2,
+            .listen-button,
+            .print-button,
+            .back-button {
+                display: none !important;
+            }
+
+            .pets {
+                display: block;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .pet-card {
+                width: 210mm;
+                height: 297mm;
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                background: white;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .pet-card:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .pet-card img {
+                width: 190mm;
+                height: 270mm;
+                max-width: 190mm;
+                max-height: 270mm;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🐾 Pets</h1>
+    <p>Learn the names of pets and animals</p>
+
+    <div class="pets">
+
+        <div class="pet-card">
+            <img src="images/cat.png" alt="Cat">
+            <h2>Cat</h2>
+            <button class="listen-button" onclick="speak('Cat')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="pet-card">
+            <img src="images/canary.png" alt="Canary">
+            <h2>Canary</h2>
+            <button class="listen-button" onclick="speak('Canary')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="pet-card">
+            <img src="images/dog.png" alt="Dog">
+            <h2>Dog</h2>
+            <button class="listen-button" onclick="speak('Dog')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="pet-card">
+            <img src="images/rabbit.png" alt="Rabbit">
+            <h2>Rabbit</h2>
+            <button class="listen-button" onclick="speak('Rabbit')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="pet-card">
+            <img src="images/goldfish.png" alt="Goldfish">
+            <h2>Goldfish</h2>
+            <button class="listen-button" onclick="speak('Goldfish')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="pet-card">
+            <img src="images/chick.png" alt="Chick">
+            <h2>Chick</h2>
+            <button class="listen-button" onclick="speak('Chick')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="pet-card">
+            <img src="images/hamster.png" alt="Hamster">
+            <h2>Hamster</h2>
+            <button class="listen-button" onclick="speak('Hamster')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="pet-card">
+            <img src="images/lamb.png" alt="Lamb">
+            <h2>Lamb</h2>
+            <button class="listen-button" onclick="speak('Lamb')">
+                🔊 Listen
+            </button>
+        </div>
+
+    </div>
+
+    <button class="print-button" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+    <br>
+
+    <a href="sequence5.html" class="back-button">
+        ← Back to Sequence 05
+    </a>
+
+    <script>
+        function speak(word) {
+            const speech = new SpeechSynthesisUtterance(word);
+            speech.lang = "en-US";
+            speech.rate = 0.8;
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

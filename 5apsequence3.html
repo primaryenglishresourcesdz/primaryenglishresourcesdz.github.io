@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>5AP - Sequence 03: Holidays and Travelling</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 25px;
+            background: #fff7fb;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d63384;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+            font-size: 18px;
+        }
+
+        .lessons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .lesson-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 18px;
+            text-align: center;
+            box-shadow: 0 4px 12px #00000010;
+            border: 1px solid #f8d7e8;
+            transition: transform 0.2s;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .lesson-card img {
+            width: 220px;
+            height: 220px;
+            max-width: 100%;
+            object-fit: contain;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .lesson-card h2 {
+            color: #b52670;
+            font-size: 20px;
+            min-height: 48px;
+            margin: 10px 0;
+        }
+
+        .view-button {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 12px 20px;
+            background: #d63384;
+            color: white;
+            text-decoration: none;
+            border-radius: 9px;
+            font-weight: bold;
+        }
+
+        .view-button:hover {
+            background: #ad2167;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 35px auto 10px;
+            padding: 12px 22px;
+            background: #d63384;
+            color: white;
+            text-decoration: none;
+            border-radius: 9px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: #ad2167;
+        }
+
+        @media (max-width: 800px) {
+            .lessons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .lessons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sequence 03: Holidays and Travelling</h1>
+
+    <p class="subtitle">
+        Explore the lessons and discover the world!
+    </p>
+
+    <div class="lessons">
+
+        <!-- Destinations and Places -->
+        <div class="lesson-card">
+
+            <img src="images/destinations.png" alt="Destinations and Places">
+
+            <h2>Destinations and Places</h2>
+
+            <a href="5ap-destinations.html" class="view-button">
+                View Resources
+            </a>
+
+        </div>
+
+        <!-- Seasons -->
+        <div class="lesson-card">
+
+            <img src="images/seasons.png" alt="Seasons">
+
+            <h2>Seasons</h2>
+
+            <a href="5ap-seasons.html" class="view-button">
+                View Resources
+            </a>
+
+        </div>
+
+        <!-- Holiday Activities -->
+        <div class="lesson-card">
+
+            <img src="images/holiday.png" alt="Holiday Activities">
+
+            <h2>Holiday Activities</h2>
+
+            <a href="5ap-holiday-activities.html" class="view-button">
+                View Resources
+            </a>
+
+        </div>
+
+        <!-- Means of Transportation -->
+        <div class="lesson-card">
+
+            <img src="images/transportation.png" alt="Means of Transportation">
+
+            <h2>Means of Transportation</h2>
+
+            <a href="5ap-transportation.html" class="view-button">
+                View Resources
+            </a>
+
+        </div>
+
+        <!-- Weather -->
+        <div class="lesson-card">
+
+            <img src="images/weather.png" alt="Weather">
+
+            <h2>Weather</h2>
+
+            <a href="5ap-weather.html" class="view-button">
+                View Resources
+            </a>
+
+        </div>
+
+    </div>
+
+    <a href="5ap.html" class="back-button">
+        &larr; Back to 5AP
+    </a>
+
+</body>
+</html>

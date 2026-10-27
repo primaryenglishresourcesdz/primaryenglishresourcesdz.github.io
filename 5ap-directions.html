@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5AP - Directions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff5fa;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #d63384;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+
+        .flashcard {
+            background-color: white;
+            border-radius: 15px;
+            padding: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flashcard img {
+            width: 270px;
+            height: 270px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .flashcard button {
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ad2167;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #d63384;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .back-button:hover {
+            background-color: #ad2167;
+        }
+
+        .print-btn {
+            display: block;
+            width: fit-content;
+            margin: 25px auto;
+            background-color: #e75480;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .print-btn:hover {
+            background-color: #d9436f;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .flashcard-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .flashcard img {
+                width: 240px;
+                height: 240px;
+                max-width: 100%;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 500px) {
+            .flashcard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .flashcard img {
+                width: 270px;
+                height: 270px;
+                max-width: 100%;
+            }
+        }
+
+        /* A4 PRINT SETTINGS */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            html,
+            body {
+                width: 210mm;
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            h1,
+            .subtitle,
+            button,
+            .back-button {
+                display: none !important;
+            }
+
+            .flashcard-container {
+                display: block;
+                width: 210mm;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .flashcard {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 10mm;
+                box-sizing: border-box;
+                background: white;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .flashcard:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .flashcard img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                max-width: 190mm;
+                max-height: 277mm;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Directions</h1>
+
+    <p class="subtitle">
+        5th Year Primary School - Sequence 02: My Hometown
+    </p>
+
+    <div class="flashcard-container">
+
+        <div class="flashcard">
+            <img src="images/right.png" alt="On the right">
+            <button onclick="speak('On the right')">Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/left.png" alt="On the left">
+            <button onclick="speak('On the left')">Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/Turnright.png" alt="Turn right">
+            <button onclick="speak('Turn right')">Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/Turnleft.png" alt="Turn left">
+            <button onclick="speak('Turn left')">Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/Stop.png" alt="Stop">
+            <button onclick="speak('Stop')">Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/Crossthestreet.png" alt="Cross the street">
+            <button onclick="speak('Cross the street')">Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/Roundabout.png" alt="Roundabout">
+            <button onclick="speak('Roundabout')">Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/Takethefirstturn.png" alt="Take the first turn">
+            <button onclick="speak('Take the first turn')">Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/Trafficlights.png" alt="Traffic light">
+            <button onclick="speak('Traffic light')">Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/Zebracrossing.png" alt="Zebra crossing">
+            <button onclick="speak('Zebra crossing')">Listen</button>
+        </div>
+
+    </div>
+
+    <button class="print-btn" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+    <a href="5apsequence2.html" class="back-button">
+        &larr; Back to Sequence 02
+    </a>
+
+    <script>
+        function speak(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-GB";
+            speech.rate = 0.8;
+
+            window.speechSynthesis.cancel();
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+
+</html>

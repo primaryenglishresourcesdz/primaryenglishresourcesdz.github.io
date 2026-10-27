@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequence 01 - Jobs, Occupations & Hobbies</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fff0f6;
+            color: #333;
+        }
+
+        header {
+            background-color: #d63384;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .resource-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            min-height: 350px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .resource-card img {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .resource-card h2 {
+            margin: 10px 0;
+            font-size: 22px;
+        }
+
+        .resource-card p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .resource-button {
+            display: inline-block;
+            padding: 12px 22px;
+            background-color: #d63384;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .resource-button:hover {
+            background-color: #b0256b;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 35px auto 0;
+            padding: 12px 22px;
+            background-color: #d63384;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .back-button:hover {
+            background-color: #b0256b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            background-color: #fce4ec;
+            color: #666;
+        }
+
+        @media (max-width: 600px) {
+            .resources {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>📕 Sequence 01</h1>
+        <p>Jobs, Occupations & Hobbies</p>
+    </header>
+
+    <div class="container">
+
+        <div class="resources">
+
+            <!-- Jobs & Workplaces -->
+            <div class="resource-card">
+
+                <img src="images/workplace.png" alt="Jobs and Workplaces">
+
+                <h2>Jobs & Workplaces</h2>
+
+                <p>Learn about different jobs and where people work.</p>
+
+                <a href="5ap-jobs.html" class="resource-button">
+                    View Resource
+                </a>
+
+            </div>
+
+            <!-- Hobbies -->
+            <div class="resource-card">
+
+                <img src="images/hobbies.png" alt="Hobbies">
+
+                <h2>Hobbies</h2>
+
+                <p>Learn about different hobbies and activities.</p>
+
+                <a href="5ap-hobbies.html" class="resource-button">
+                    View Resource
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="5ap.html" class="back-button">
+            ← Back to 5AP
+        </a>
+
+    </div>
+
+    <footer>
+        <p>Primary School English Teacher Resources</p>
+    </footer>
+
+</body>
+</html>

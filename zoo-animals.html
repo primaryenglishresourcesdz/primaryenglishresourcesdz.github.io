@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zoo Animals</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f7ff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 280px);
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            width: 280px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 240px;
+            height: 240px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            font-size: 22px;
+            margin: 15px 0;
+        }
+
+        button {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4a90e2;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #357abd;
+        }
+
+        .print-button {
+            display: block;
+            margin: 40px auto 0;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            background-color: #555;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            h1,
+            .print-button,
+            .back-button,
+            .card h2,
+            .card button {
+                display: none !important;
+            }
+
+            .cards {
+                display: block;
+                margin: 0;
+                padding: 0;
+            }
+
+            .card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 10mm;
+                box-sizing: border-box;
+                background: white;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .card:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .card img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                max-width: 190mm;
+                max-height: 277mm;
+                object-fit: contain;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Zoo Animals</h1>
+
+    <div class="cards">
+
+        <!-- Lion -->
+        <div class="card">
+            <img src="images/lion.png" alt="Lion">
+                        <button onclick="speak('Lion')">🔊 Listen</button>
+        </div>
+
+        <!-- Tiger -->
+        <div class="card">
+            <img src="images/tiger.png" alt="Tiger">
+            
+            <button onclick="speak('Tiger')">🔊 Listen</button>
+        </div>
+
+        <!-- Zebra -->
+        <div class="card">
+            <img src="images/zebera.png" alt="Zebra">
+            
+            <button onclick="speak('Zebra')">🔊 Listen</button>
+        </div>
+
+        <!-- Monkey -->
+        <div class="card">
+            <img src="images/monkey.png" alt="Monkey">
+            
+            <button onclick="speak('Monkey')">🔊 Listen</button>
+        </div>
+
+        <!-- Crocodile -->
+        <div class="card">
+            <img src="images/crocodile.png" alt="Crocodile">
+            
+            <button onclick="speak('Crocodile')">🔊 Listen</button>
+        </div>
+
+        <!-- Elephant -->
+        <div class="card">
+            <img src="images/elephant.png" alt="Elephant">
+                        <button onclick="speak('Elephant')">🔊 Listen</button>
+        </div>
+
+        <!-- Panda -->
+        <div class="card">
+            <img src="images/panda.png" alt="Panda">
+                        <button onclick="speak('Panda')">🔊 Listen</button>
+        </div>
+
+        <!-- Bear -->
+        <div class="card">
+            <img src="images/bear.png" alt="Bear">
+            
+            <button onclick="speak('Bear')">🔊 Listen</button>
+        </div>
+
+        <!-- Snake -->
+        <div class="card">
+            <img src="images/snake.png" alt="Snake">
+            
+            <button onclick="speak('Snake')">🔊 Listen</button>
+        </div>
+
+    </div>
+
+    <button class="print-button" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+    <a href="4ap-sequence5.html" class="back-button">
+        ← Back to Sequence 05
+    </a>
+
+    <script>
+        function speak(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-GB";
+            speech.rate = 0.8;
+            speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

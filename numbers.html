@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Numbers 1–10 - Teacher Resources</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            width: 180px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        .number-picture {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
+        .number {
+            font-size: 70px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .word {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .pronunciation {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        button {
+            border: none;
+            border-radius: 20px;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .listen {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .print {
+            background-color: #333;
+            color: white;
+            display: block;
+            margin: 30px auto 10px auto;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+            }
+
+            h1,
+            .subtitle,
+            .listen,
+            .print,
+            .back,
+            .number,
+            .word,
+            .pronunciation {
+                display: none !important;
+            }
+
+            .cards {
+                display: block;
+                margin: 0;
+                padding: 0;
+            }
+
+            .card {
+                width: 210mm;
+                height: 297mm;
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                background-color: white;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .card:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .number-picture {
+                width: 190mm;
+                height: 270mm;
+                object-fit: contain;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔢 Numbers 1–10</h1>
+
+    <p class="subtitle">
+        3AP Teacher Resource — Sequence 1
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img class="number-picture" src="images/1.png" alt="Number one picture">
+            
+            
+            <p class="pronunciation">/wʌn/</p>
+            <button class="listen" onclick="speak('One')">🔊 Listen</button>
+        </div>
+
+        <div class="card">
+            <img class="number-picture" src="images/2.png" alt="Number two picture">
+            
+            <p class="pronunciation">/tuː/</p>
+            <button class="listen" onclick="speak('Two')">🔊 Listen</button>
+        </div>
+
+        <div class="card">
+            <img class="number-picture" src="images/3.png" alt="Number three picture">
+            
+            <p class="pronunciation">/θriː/</p>
+            <button class="listen" onclick="speak('Three')">🔊 Listen</button>
+        </div>
+
+        <div class="card">
+            <img class="number-picture" src="images/4.png" alt="Number four picture">
+            
+            <p class="pronunciation">/fɔːr/</p>
+            <button class="listen" onclick="speak('Four')">🔊 Listen</button>
+        </div>
+
+        <div class="card">
+            <img class="number-picture" src="images/5.png" alt="Number five picture">
+            
+            <p class="pronunciation">/faɪv/</p>
+            <button class="listen" onclick="speak('Five')">🔊 Listen</button>
+        </div>
+
+        <div class="card">
+            <img class="number-picture" src="images/6.png" alt="Number six picture">
+                        <p class="pronunciation">/sɪks/</p>
+            <button class="listen" onclick="speak('Six')">🔊 Listen</button>
+        </div>
+
+        <div class="card">
+            <img class="number-picture" src="images/7.png" alt="Number seven picture">
+            
+            <p class="pronunciation">/ˈsevən/</p>
+            <button class="listen" onclick="speak('Seven')">🔊 Listen</button>
+        </div>
+
+        <div class="card">
+            <img class="number-picture" src="images/8.png" alt="Number eight picture">
+            
+            <p class="pronunciation">/eɪt/</p>
+            <button class="listen" onclick="speak('Eight')">🔊 Listen</button>
+        </div>
+
+        <div class="card">
+            <img class="number-picture" src="images/9.png" alt="Number nine picture">
+            
+            <p class="pronunciation">/naɪn/</p>
+            <button class="listen" onclick="speak('Nine')">🔊 Listen</button>
+        </div>
+
+        <div class="card">
+            <img class="number-picture" src="images/10.png" alt="Number ten picture">
+            
+            <p class="pronunciation">/ten/</p>
+            <button class="listen" onclick="speak('Ten')">🔊 Listen</button>
+        </div>
+
+    </div>
+
+    <button class="print" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+    <a class="back" href="sequence1.html">
+        ← Back to Sequence 1
+    </a>
+
+    <script>
+        function speak(word) {
+            const speech = new SpeechSynthesisUtterance(word);
+            speech.lang = "en-US";
+            speech.rate = 0.8;
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

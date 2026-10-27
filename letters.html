@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>3AP English - Letters</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 17px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+       .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+.card img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+        .letter {
+            font-size: 60px;
+            font-weight: bold;
+            color: #4a90e2;
+            margin-bottom: 15px;
+        }
+
+        .pronunciation {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .sound {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .example {
+            font-size: 18px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #357abd;
+        }
+
+        .bottom-buttons {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .print-button {
+            background-color: #333;
+            padding: 12px 20px;
+            font-size: 16px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-left: 10px;
+            background-color: #777;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        @media print {
+
+            body {
+                background: white;
+            }
+
+            header {
+                background: white;
+                color: black;
+                padding: 10px;
+            }
+
+            .card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                break-inside: avoid;
+            }
+
+            button,
+            .bottom-buttons,
+            footer {
+                display: none;
+            }
+
+            .cards {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔤 3AP English – Letters</h1>
+    <p>Letter names, sounds and phonetic pronunciation</p>
+</header>
+
+<div class="container">
+
+    <div class="cards">
+
+       <!-- A -->
+<div class="card">
+    <img src="images/a.png" alt="A - Apple">
+
+    <button onclick="speak('A')">
+        🔊 Letter Name
+    </button>
+
+    <button onclick="playSound('sounds/asound.mp3')">
+        🔊 Letter Sound
+    </button>
+
+    <button onclick="speak('apple')">
+        🔊 Word
+    </button>
+</div>
+       <!-- B -->
+<div class="card">
+    <img src="images/b.png" alt="B - Ball">
+
+    <button onclick="speak('B')">🔊 Letter Name</button>
+
+    <button onclick="playSound('sounds/bsound.mp3')">🔊 Letter Sound</button>
+
+    <button onclick="speak('banana')">🔊 Word</button>
+</div>
+<!-- C -->
+<div class="card">
+    <img src="images/c.png" alt="C - Cat">
+
+    <button onclick="speak('C')">🔊 Letter Name</button>
+    <button onclick="speak('C')">🔊 Letter Sound</button>
+    <button onclick="speak('cat')">🔊 Word</button>
+</div>
+
+<!-- D -->
+<div class="card">
+    <img src="images/d.png" alt="D - Dog">
+
+    <button onclick="speak('D')">🔊 Letter Name</button>
+    <button onclick="speak('D')">🔊 Letter Sound</button>
+    <button onclick="speak('dog')">🔊 Word</button>
+</div>
+
+<!-- E -->
+<div class="card">
+    <img src="images/e.png" alt="E - Elephant">
+
+    <button onclick="speak('E')">🔊 Letter Name</button>
+    <button onclick="speak('E')">🔊 Letter Sound</button>
+    <button onclick="speak('elephant')">🔊 Word</button>
+</div>
+
+<!-- F -->
+<div class="card">
+    <img src="images/f.png" alt="F - Fish">
+
+    <button onclick="speak('F')">🔊 Letter Name</button>
+    <button onclick="speak('F')">🔊 Letter Sound</button>
+    <button onclick="speak('fish')">🔊 Word</button>
+</div>
+
+<!-- G -->
+<div class="card">
+    <img src="images/g.png" alt="G - Goat">
+
+    <button onclick="speak('G')">🔊 Letter Name</button>
+    <button onclick="speak('G')">🔊 Letter Sound</button>
+    <button onclick="speak('goat')">🔊 Word</button>
+</div>
+
+<!-- H -->
+<div class="card">
+    <img src="images/h.png" alt="H - House">
+
+    <button onclick="speak('H')">🔊 Letter Name</button>
+    <button onclick="speak('H')">🔊 Letter Sound</button>
+    <button onclick="speak('hat')">🔊 Word</button>
+</div>
+
+<!-- I -->
+<div class="card">
+    <img src="images/i.png" alt="I - Ice cream">
+
+    <button onclick="speak('I')">🔊 Letter Name</button>
+    <button onclick="speak('I')">🔊 Letter Sound</button>
+    <button onclick="speak('igloo')">🔊 Word</button>
+</div>
+
+<!-- J -->
+<div class="card">
+    <img src="images/j.png" alt="J - Juice">
+
+    <button onclick="speak('J')">🔊 Letter Name</button>
+    <button onclick="speak('J')">🔊 Letter Sound</button>
+    <button onclick="speak('jam')">🔊 Word</button>
+</div>
+
+<!-- K -->
+<div class="card">
+    <img src="images/k.png" alt="K - Kite">
+
+    <button onclick="speak('K')">🔊 Letter Name</button>
+    <button onclick="speak('K')">🔊 Letter Sound</button>
+    <button onclick="speak('kite')">🔊 Word</button>
+</div>
+
+<!-- L -->
+<div class="card">
+    <img src="images/l.png" alt="L - Lion">
+
+    <button onclick="speak('L')">🔊 Letter Name</button>
+    <button onclick="speak('L')">🔊 Letter Sound</button>
+    <button onclick="speak('lion')">🔊 Word</button>
+</div>
+
+<!-- M -->
+<div class="card">
+    <img src="images/m.png" alt="M - Monkey">
+
+    <button onclick="speak('M')">🔊 Letter Name</button>
+    <button onclick="speak('M')">🔊 Letter Sound</button>
+    <button onclick="speak('monkey')">🔊 Word</button>
+</div>
+
+<!-- N -->
+<div class="card">
+    <img src="images/n.png" alt="N - Nose">
+
+    <button onclick="speak('N')">🔊 Letter Name</button>
+    <button onclick="speak('N')">🔊 Letter Sound</button>
+    <button onclick="speak('nose')">🔊 Word</button>
+</div>
+
+<!-- O -->
+<div class="card">
+    <img src="images/o.png" alt="O - Orange">
+
+    <button onclick="speak('O')">🔊 Letter Name</button>
+    <button onclick="speak('O')">🔊 Letter Sound</button>
+    <button onclick="speak('orange')">🔊 Word</button>
+</div>
+
+<!-- P -->
+<div class="card">
+    <img src="images/p.png" alt="P - Pencil">
+
+    <button onclick="speak('P')">🔊 Letter Name</button>
+    <button onclick="speak('P')">🔊 Letter Sound</button>
+    <button onclick="speak('pen')">🔊 Word</button>
+</div>
+
+<!-- Q -->
+<div class="card">
+    <img src="images/q.png" alt="Q - Queen">
+
+    <button onclick="speak('Q')">🔊 Letter Name</button>
+    <button onclick="speak('Q')">🔊 Letter Sound</button>
+    <button onclick="speak('queen')">🔊 Word</button>
+</div>
+
+<!-- R -->
+<div class="card">
+    <img src="images/r.png" alt="R - Rabbit">
+
+    <button onclick="speak('R')">🔊 Letter Name</button>
+    <button onclick="speak('R')">🔊 Letter Sound</button>
+    <button onclick="speak('rabbit')">🔊 Word</button>
+</div>
+
+<!-- S -->
+<div class="card">
+    <img src="images/s.png" alt="S - Sun">
+
+    <button onclick="speak('S')">🔊 Letter Name</button>
+    <button onclick="speak('S')">🔊 Letter Sound</button>
+    <button onclick="speak('sun')">🔊 Word</button>
+</div>
+
+<!-- T -->
+<div class="card">
+    <img src="images/t.png" alt="T - Tiger">
+
+    <button onclick="speak('T')">🔊 Letter Name</button>
+    <button onclick="speak('T')">🔊 Letter Sound</button>
+    <button onclick="speak('tiger')">🔊 Word</button>
+</div>
+
+<!-- U -->
+<div class="card">
+    <img src="images/u.png" alt="U - Umbrella">
+
+    <button onclick="speak('U')">🔊 Letter Name</button>
+    <button onclick="speak('U')">🔊 Letter Sound</button>
+    <button onclick="speak('umbrella')">🔊 Word</button>
+</div>
+
+<!-- V -->
+<div class="card">
+    <img src="images/v.png" alt="V - Van">
+
+    <button onclick="speak('V')">🔊 Letter Name</button>
+    <button onclick="speak('V')">🔊 Letter Sound</button>
+    <button onclick="speak('van')">🔊 Word</button>
+</div>
+
+<!-- W -->
+<div class="card">
+    <img src="images/w.png" alt="W - Watermelon">
+
+    <button onclick="speak('W')">🔊 Letter Name</button>
+    <button onclick="speak('W')">🔊 Letter Sound</button>
+    <button onclick="speak('window')">🔊 Word</button>
+</div>
+
+<!-- X -->
+<div class="card">
+    <img src="images/x.png" alt="X - Xylophone">
+
+    <button onclick="speak('X')">🔊 Letter Name</button>
+    <button onclick="speak('X')">🔊 Letter Sound</button>
+    <button onclick="speak('box')">🔊 Word</button>
+</div>
+
+<!-- Y -->
+<div class="card">
+    <img src="images/y.png" alt="Y - Yellow">
+
+    <button onclick="speak('Y')">🔊 Letter Name</button>
+    <button onclick="speak('Y')">🔊 Letter Sound</button>
+    <button onclick="speak('yellow')">🔊 Word</button>
+</div>
+
+<!-- Z -->
+<div class="card">
+    <img src="images/z.png" alt="Z - Zebra">
+
+    <button onclick="speak('Z')">🔊 Letter Name</button>
+    <button onclick="speak('Z')">🔊 Letter Sound</button>
+    <button onclick="speak('zebra')">🔊 Word</button>
+</div>
+    </div>
+
+    <div class="bottom-buttons">
+        <button class="print-button" onclick="window.print()">
+            🖨️ Print Letters
+        </button>
+
+        <a class="back-button" href="sequence1.html">
+            ← Back to Sequence 1
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    3AP English Teacher Resource Repository
+</footer>
+
+<script>
+    function speak(text) {
+        window.speechSynthesis.cancel();
+
+        const speech = new SpeechSynthesisUtterance(text);
+        speech.lang = "en-GB";
+        speech.rate = 0.8;
+
+        window.speechSynthesis.speak(speech);
+    }
+
+    function playSound(file) {
+        const audio = new Audio(file);
+        audio.play();
+    }
+</script>
+
+</body>
+</html>

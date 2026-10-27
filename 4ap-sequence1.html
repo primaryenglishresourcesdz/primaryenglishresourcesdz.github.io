@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4AP - Sequence 01</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fb;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .resource-card {
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .resource-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .resource-card h2 {
+            color: #333;
+            font-size: 21px;
+            margin-bottom: 20px;
+        }
+
+        .view-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .view-button:hover {
+            opacity: 0.85;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 35px auto 0;
+            padding: 12px 25px;
+            background-color: #555;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sequence 01</h1>
+
+    <p class="subtitle">Family and Friends</p>
+
+    <div class="resources">
+
+        <!-- Family Members -->
+        <div class="resource-card">
+            <img src="images/family.png" alt="Family Members">
+
+            <h2>Family Members</h2>
+
+            <a href="4ap-family.html" class="view-button">
+                View Flashcards
+            </a>
+        </div>
+
+
+        <!-- Jobs and Occupations -->
+        <div class="resource-card">
+            <img src="images/jobs.png" alt="Jobs and Occupations">
+
+            <h2>Jobs and Occupations</h2>
+
+            <a href="jobs.html" class="view-button">
+                View Flashcards
+            </a>
+        </div>
+
+
+        <!-- Countries and Nationalities -->
+        <div class="resource-card">
+            <img src="images/countries.png" alt="Countries and Nationalities">
+
+            <h2>Countries and Nationalities</h2>
+
+            <a href="countries.html" class="view-button">
+                View Flashcards
+            </a>
+        </div>
+
+    </div>
+
+
+    <a href="4ap.html" class="back-button">
+        ← Back to 4AP
+    </a>
+
+</body>
+</html>

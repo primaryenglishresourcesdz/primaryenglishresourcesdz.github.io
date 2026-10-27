@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3AP - Home Prepositions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .prepositions {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .prep-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .prep-card img {
+            width: 250px;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        h2 {
+            margin-top: 15px;
+            font-size: 22px;
+        }
+
+        .listen-button {
+            margin-top: 10px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            background: #333;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .listen-button:hover {
+            background: #555;
+        }
+
+        .print-button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #4a90e2;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background: #357abd;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 12px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 900px) {
+            .prepositions {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .prepositions {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* PRINT VERSION */
+
+        @media print {
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            h1,
+            body > p,
+            .listen-button,
+            .print-button,
+            .back-button,
+            .prep-card h2 {
+                display: none;
+            }
+
+            .prepositions {
+                display: block;
+                margin: 0;
+                padding: 0;
+                max-width: none;
+            }
+
+            .prep-card {
+                width: 210mm;
+                height: 297mm;
+
+                margin: 0;
+                padding: 0;
+
+                background: white;
+                border-radius: 0;
+                box-shadow: none;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .prep-card:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .prep-card img {
+                width: 190mm;
+                height: 270mm;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📍 Prepositions of Place</h1>
+
+    <p>Learn opposite, next to and in</p>
+
+
+    <div class="prepositions">
+
+        <!-- IN -->
+        <div class="prep-card">
+
+            <img src="images/in.png" alt="In">
+
+            
+
+            <button class="listen-button" onclick="speak('In')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <!-- NEXT TO -->
+        <div class="prep-card">
+
+            <img src="images/nextto.png" alt="Next to">
+
+            
+
+            <button class="listen-button" onclick="speak('Next to')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <!-- OPPOSITE -->
+        <div class="prep-card">
+
+            <img src="images/opposite.png" alt="Opposite">
+
+            
+
+            <button class="listen-button" onclick="speak('Opposite')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRINT BUTTON -->
+
+    <button class="print-button" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+
+    <!-- BACK BUTTON -->
+
+    <a href="sequence3.html" class="back-button">
+        ← Back to Sequence 03
+    </a>
+
+
+    <script>
+
+        function speak(word) {
+            const speech = new SpeechSynthesisUtterance(word);
+            speech.lang = "en-US";
+            speechSynthesis.speak(speech);
+        }
+
+    </script>
+
+</body>
+</html>

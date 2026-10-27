@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3AP - Rooms of the House</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .rooms {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .room-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .room-card img {
+            width: 250px;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        h2 {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+
+        .listen-button {
+            margin-top: 10px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            background: #333;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .listen-button:hover {
+            background: #555;
+        }
+
+        .print-button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #4a90e2;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .print-button:hover {
+            background: #357abd;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 12px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 900px) {
+            .rooms {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .rooms {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* PRINT VERSION */
+
+        @media print {
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            h1,
+            body > p,
+            .listen-button,
+            .print-button,
+            .back-button,
+            .room-card h2 {
+                display: none;
+            }
+
+            .rooms {
+                display: block;
+                margin: 0;
+                padding: 0;
+                max-width: none;
+            }
+
+            .room-card {
+                width: 210mm;
+                height: 297mm;
+
+                margin: 0;
+                padding: 0;
+
+                background: white;
+                border-radius: 0;
+                box-shadow: none;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .room-card:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .room-card img {
+                width: 190mm;
+                height: 270mm;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🏠 Rooms of the House</h1>
+
+    <p>Learn the names of places in the house</p>
+
+
+    <div class="rooms">
+
+        <!-- HOUSE -->
+        <div class="room-card">
+            <img src="images/house.png" alt="House">
+
+            
+
+            <button class="listen-button" onclick="speak('House')">
+                🔊 Listen
+            </button>
+        </div>
+
+
+        <!-- FLAT -->
+        <div class="room-card">
+            <img src="images/flat.png" alt="Flat">
+
+            
+
+            <button class="listen-button" onclick="speak('Flat')">
+                🔊 Listen
+            </button>
+        </div>
+
+
+        <!-- BEDROOM -->
+        <div class="room-card">
+            <img src="images/bedroom.png" alt="Bedroom">
+
+            
+
+            <button class="listen-button" onclick="speak('Bedroom')">
+                🔊 Listen
+            </button>
+        </div>
+
+
+        <!-- DINING ROOM -->
+        <div class="room-card">
+            <img src="images/diningroom.png" alt="Dining Room">
+
+            
+
+            <button class="listen-button" onclick="speak('Dining Room')">
+                🔊 Listen
+            </button>
+        </div>
+
+
+        <!-- LIVING ROOM -->
+        <div class="room-card">
+            <img src="images/livingroom.png" alt="Living Room">
+
+            
+
+            <button class="listen-button" onclick="speak('Living Room')">
+                🔊 Listen
+            </button>
+        </div>
+
+
+        <!-- BATHROOM -->
+        <div class="room-card">
+            <img src="images/bathroom.png" alt="Bathroom">
+
+            
+
+            <button class="listen-button" onclick="speak('Bathroom')">
+                🔊 Listen
+            </button>
+        </div>
+
+
+        <!-- KITCHEN -->
+        <div class="room-card">
+            <img src="images/kitchen.png" alt="Kitchen">
+
+            
+
+            <button class="listen-button" onclick="speak('Kitchen')">
+                🔊 Listen
+            </button>
+        </div>
+
+
+        <!-- TOILET -->
+        <div class="room-card">
+            <img src="images/toilet.png" alt="Toilet">
+
+            
+
+            <button class="listen-button" onclick="speak('Toilet')">
+                🔊 Listen
+            </button>
+        </div>
+
+
+        <!-- GARAGE -->
+        <div class="room-card">
+            <img src="images/garage.png" alt="Garage">
+
+            
+
+            <button class="listen-button" onclick="speak('Garage')">
+                🔊 Listen
+            </button>
+        </div>
+
+
+        <!-- GARDEN -->
+        <div class="room-card">
+            <img src="images/garden.png" alt="Garden">
+
+            
+
+            <button class="listen-button" onclick="speak('Garden')">
+                🔊 Listen
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- PRINT BUTTON -->
+
+    <button class="print-button" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+
+    <!-- BACK BUTTON -->
+
+    <a href="sequence3.html" class="back-button">
+        ← Back to Sequence 03
+    </a>
+
+
+    <script>
+
+        function speak(word) {
+            const speech = new SpeechSynthesisUtterance(word);
+            speech.lang = "en-US";
+            speechSynthesis.speak(speech);
+        }
+
+    </script>
+
+</body>
+</html>

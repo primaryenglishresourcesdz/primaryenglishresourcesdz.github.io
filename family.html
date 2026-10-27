@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Members - Teacher Resources</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            width: 220px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        .picture {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 10px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .word {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .pronunciation {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        button {
+            border: none;
+            border-radius: 20px;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .listen {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .print {
+            background-color: #333;
+            color: white;
+            display: block;
+            margin: 30px auto 10px auto;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* PRINT FLASHCARDS */
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                background-color: white;
+                margin: 0;
+                padding: 0;
+            }
+
+            h1,
+            .subtitle,
+            .listen,
+            .print,
+            .back,
+            .word,
+            .pronunciation {
+                display: none !important;
+            }
+
+            .cards {
+                display: block;
+                margin: 0;
+                padding: 0;
+            }
+
+            .card {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                background-color: white;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .card:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .picture {
+                width: 190mm;
+                height: 270mm;
+                margin: 0;
+                padding: 0;
+                border-radius: 0;
+                overflow: visible;
+            }
+
+            .picture img {
+                width: 190mm;
+                height: 270mm;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>👨‍👩‍👧 Family Members</h1>
+
+    <p class="subtitle">
+        3AP Teacher Resource — Sequence 1
+    </p>
+
+    <div class="cards">
+
+        <!-- Mother -->
+        <div class="card">
+            <div class="picture">
+                <img src="./images/mother.png" alt="Mother">
+            </div>
+
+            
+            <p class="pronunciation">/ˈmʌðər/</p>
+
+            <button class="listen" onclick="speak('Mother')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- Father -->
+        <div class="card">
+            <div class="picture">
+                <img src="./images/father.png" alt="Father">
+            </div>
+
+            
+            <p class="pronunciation">/ˈfɑːðər/</p>
+
+            <button class="listen" onclick="speak('Father')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- Brother -->
+        <div class="card">
+            <div class="picture">
+                <img src="./images/brother.png" alt="Brother">
+            </div>
+
+            
+            <p class="pronunciation">/ˈbrʌðər/</p>
+
+            <button class="listen" onclick="speak('Brother')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- Sister -->
+        <div class="card">
+            <div class="picture">
+                <img src="./images/sister.png" alt="Sister">
+            </div>
+
+           
+            <p class="pronunciation">/ˈsɪstər/</p>
+
+            <button class="listen" onclick="speak('Sister')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- Grandfather -->
+        <div class="card">
+            <div class="picture">
+                <img src="./images/grandfather.png" alt="Grandfather">
+            </div>
+
+            
+            <p class="pronunciation">/ˈɡrænˌfɑːðər/</p>
+
+            <button class="listen" onclick="speak('Grandfather')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- Grandmother -->
+        <div class="card">
+            <div class="picture">
+                <img src="./images/grandmother.png" alt="Grandmother">
+            </div>
+
+            
+            <p class="pronunciation">/ˈɡrænˌmʌðər/</p>
+
+            <button class="listen" onclick="speak('Grandmother')">
+                🔊 Listen
+            </button>
+        </div>
+
+    </div>
+
+    <button class="print" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+    <a class="back" href="sequence1.html">
+        ← Back to Sequence 1
+    </a>
+
+    <script>
+        function speak(word) {
+            const speech = new SpeechSynthesisUtterance(word);
+
+            speech.lang = "en-US";
+            speech.rate = 0.8;
+
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

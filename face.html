@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parts of the Face</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .parts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .part-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .part-card img {
+            width: 250px;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        .part-card h2 {
+            color: #333;
+            margin: 15px 0;
+        }
+
+        .listen-button {
+            padding: 10px 18px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .listen-button:hover {
+            background: #555;
+        }
+
+        .print-button {
+            display: inline-block;
+            margin: 20px 10px 0;
+            padding: 12px 20px;
+            background: #c2185b;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 800px) {
+            .parts {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .parts {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            h1,
+            body > p,
+            .part-card h2,
+            .listen-button,
+            .print-button,
+            .back-button {
+                display: none !important;
+            }
+
+            .parts {
+                display: block;
+                width: 100%;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .part-card {
+                box-sizing: border-box;
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 10mm;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                border-radius: 0;
+                box-shadow: none;
+                break-after: page;
+                page-break-after: always;
+            }
+
+            .part-card:last-child {
+                break-after: auto;
+                page-break-after: auto;
+            }
+
+            .part-card img {
+                display: block;
+                width: 190mm;
+                height: 270mm;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>😊 Parts of the Face</h1>
+    <p>Learn the different parts of the face</p>
+
+    <div class="parts">
+
+        <div class="part-card">
+            <img src="images/face.png" alt="Face">
+            
+            <button class="listen-button" onclick="speak('Face')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="part-card">
+            <img src="images/eyes.png" alt="Eyes">
+            
+            <button class="listen-button" onclick="speak('Eyes')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="part-card">
+            <img src="images/nose.png" alt="Nose">
+            
+            <button class="listen-button" onclick="speak('Nose')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="part-card">
+            <img src="images/ear.png" alt="Ears">
+            
+            <button class="listen-button" onclick="speak('Ears')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="part-card">
+            <img src="images/mouth.png" alt="Mouth">
+            
+            <button class="listen-button" onclick="speak('Mouth')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="part-card">
+            <img src="images/hair.png" alt="Hair">
+            
+            <button class="listen-button" onclick="speak('Hair')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="part-card">
+            <img src="images/cheeks.png" alt="Cheeks">
+            
+            <button class="listen-button" onclick="speak('Cheeks')">
+                🔊 Listen
+            </button>
+        </div>
+
+    </div>
+
+    <button class="print-button" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+    <a href="sequence6.html" class="back-button">
+        ← Back to Sequence 06
+    </a>
+
+    <script>
+        function speak(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-GB";
+            speech.rate = 0.8;
+            speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cardinal Directions - 5AP</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px;
+            font-family: Arial, sans-serif;
+            background: #fff7fb;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d63384;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 17px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .lesson {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 20px;
+            padding: 22px;
+            box-shadow: 0 5px 18px #d6338415;
+            border: 1px solid #f8d7e8;
+        }
+
+        h2 {
+            color: #b52670;
+            text-align: center;
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        /* TOWN MAP */
+
+        .town-map {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 110px 125px 110px;
+            gap: 8px;
+            padding: 12px;
+            background: #e8f5df;
+            border-radius: 16px;
+            border: 3px solid #b8dba5;
+        }
+
+        .place {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 13px;
+            padding: 8px 3px;
+            font-weight: bold;
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .place .picture {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+
+        .park {
+            grid-column: 2;
+            grid-row: 1;
+            background: #d2f0c3;
+        }
+
+        .library {
+            grid-column: 1;
+            grid-row: 2;
+            background: #e2e8ff;
+        }
+
+        .school {
+            grid-column: 2;
+            grid-row: 2;
+            background: #fff0c9;
+            border: 2px solid #f0c36b;
+        }
+
+        .hospital {
+            grid-column: 3;
+            grid-row: 2;
+            background: #ffe0e5;
+        }
+
+        .house {
+            grid-column: 2;
+            grid-row: 3;
+            background: #f5e0ff;
+        }
+
+        .empty {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        /* COMPASS */
+
+        .compass {
+            width: 280px;
+            height: 280px;
+            max-width: 100%;
+            margin: 10px auto 20px;
+            position: relative;
+            border-radius: 50%;
+            border: 5px solid #d63384;
+            background: #fffafd;
+            box-shadow: inset 0 0 0 7px #fbe0ed;
+        }
+
+        .compass:before {
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 72%;
+            background: #f3bad6;
+            left: 50%;
+            top: 14%;
+            transform: translateX(-50%);
+        }
+
+        .compass:after {
+            content: "";
+            position: absolute;
+            height: 3px;
+            width: 72%;
+            background: #f3bad6;
+            top: 50%;
+            left: 14%;
+            transform: translateY(-50%);
+        }
+
+        .direction {
+            position: absolute;
+            z-index: 2;
+            width: 75px;
+            min-height: 48px;
+            border: 2px solid #d63384;
+            border-radius: 12px;
+            background: white;
+            color: #b52670;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 3px 7px #00000012;
+        }
+
+        .direction:hover {
+            background: #d63384;
+            color: white;
+        }
+
+        .north {
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .south {
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .west {
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .east {
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .north:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .south:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .west:hover {
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .east:hover {
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .compass-center {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 38px;
+        }
+
+        .listen-button,
+        .print-button {
+            display: inline-block;
+            border: none;
+            background: #d63384;
+            color: white;
+            border-radius: 10px;
+            padding: 12px 17px;
+            margin: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .listen-button:hover,
+        .print-button:hover {
+            background: #ad2167;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        .explanation {
+            text-align: center;
+            background: #fff0f6;
+            border-radius: 12px;
+            padding: 14px;
+            min-height: 65px;
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+
+        .key {
+            margin-top: 25px;
+            padding: 20px;
+            background: white;
+            border: 1px solid #f8d7e8;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .key span {
+            display: inline-block;
+            margin: 7px 12px;
+            font-weight: bold;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 5px;
+            padding: 12px 20px;
+            border-radius: 10px;
+            background: #d63384;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 750px) {
+            body {
+                padding: 15px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .town-map {
+                grid-template-rows: 95px 115px 95px;
+                gap: 5px;
+                padding: 7px;
+            }
+
+            .place .picture {
+                font-size: 32px;
+            }
+
+            .place {
+                font-size: 12px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .panel,
+            .key {
+                box-shadow: none;
+                break-inside: avoid;
+            }
+
+            .listen-button,
+            .print-button,
+            .back-button {
+                display: none;
+            }
+
+            .content {
+                grid-template-columns: 1.3fr 1fr;
+                gap: 12px;
+            }
+
+            .compass {
+                width: 230px;
+                height: 230px;
+            }
+
+            .town-map {
+                grid-template-rows: 90px 100px 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="lesson">
+
+        <h1>🧭 Cardinal Directions</h1>
+
+        <p class="subtitle">
+            Discover the four main directions with a compass and a town map.
+        </p>
+
+        <div class="content">
+
+            <!-- ILLUSTRATED TOWN MAP -->
+
+            <section class="panel">
+                <h2>Explore the Town</h2>
+
+                <div class="town-map">
+
+                    <div class="place park">
+                        <div class="picture">🌳</div>
+                        North Park
+                    </div>
+
+                    <div class="place library">
+                        <div class="picture">📚</div>
+                        West Library
+                    </div>
+
+                    <div class="place school">
+                        <div class="picture">🏫</div>
+                        The School
+                    </div>
+
+                    <div class="place hospital">
+                        <div class="picture">🏥</div>
+                        East Hospital
+                    </div>
+
+                    <div class="place house">
+                        <div class="picture">🏠</div>
+                        South House
+                    </div>
+
+                    <div class="empty" style="grid-column:1;grid-row:1;">
+                        ☁️
+                    </div>
+
+                    <div class="empty" style="grid-column:3;grid-row:1;">
+                        ☀️
+                    </div>
+
+                    <div class="empty" style="grid-column:1;grid-row:3;">
+                        🌼
+                    </div>
+
+                    <div class="empty" style="grid-column:3;grid-row:3;">
+                        🌷
+                    </div>
+
+                </div>
+
+                <p style="text-align:center; line-height:1.6;">
+                    The park is north of the school.<br>
+                    The hospital is east of the school.<br>
+                    The house is south of the school.<br>
+                    The library is west of the school.
+                </p>
+            </section>
+
+            <!-- COMPASS -->
+
+            <section class="panel">
+                <h2>The Compass Rose</h2>
+
+                <div class="compass">
+
+                    <button class="direction north"
+                            onclick="showDirection('North')">
+                        N<br>North
+                    </button>
+
+                    <button class="direction east"
+                            onclick="showDirection('East')">
+                        E<br>East
+                    </button>
+
+                    <button class="direction south"
+                            onclick="showDirection('South')">
+                        S<br>South
+                    </button>
+
+                    <button class="direction west"
+                            onclick="showDirection('West')">
+                        W<br>West
+                    </button>
+
+                    <div class="compass-center">✦</div>
+
+                </div>
+
+                <div class="explanation" id="explanation">
+                    Select a direction to display its meaning and hear its pronunciation.
+                </div>
+
+                <div class="buttons">
+                    <button class="listen-button" onclick="listenAll()">
+                        🔊 Listen to All
+                    </button>
+
+                    <button class="print-button" onclick="window.print()">
+                        🖨 Print Resource
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+        <section class="key">
+            <h2>Remember the Directions</h2>
+
+            <span>⬆ North</span>
+            <span>➡ East</span>
+            <span>⬇ South</span>
+            <span>⬅ West</span>
+        </section>
+
+        <a href="5apsequence2.html" class="back-button">
+            &larr; Back to Sequence 02
+        </a>
+
+    </main>
+
+    <script>
+        function speak(text) {
+            speechSynthesis.cancel();
+
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-GB";
+            speech.rate = 0.8;
+
+            speechSynthesis.speak(speech);
+        }
+
+        function showDirection(direction) {
+            const explanations = {
+                North: "North is up. The park is north of the school.",
+                East: "East is right. The hospital is east of the school.",
+                South: "South is down. The house is south of the school.",
+                West: "West is left. The library is west of the school."
+            };
+
+            document.getElementById("explanation").textContent =
+                explanations[direction];
+
+            speak(direction + ". " + explanations[direction]);
+        }
+
+        function listenAll() {
+            speak(
+                "North, East, South, West. " +
+                "The park is north of the school. " +
+                "The hospital is east of the school. " +
+                "The house is south of the school. " +
+                "The library is west of the school."
+            );
+        }
+    </script>
+
+</body>
+</html>

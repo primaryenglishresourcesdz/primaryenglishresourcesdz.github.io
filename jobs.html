@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jobs & Occupations - 4AP</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f7ff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 240px);
+            justify-content: center;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .card {
+            box-sizing: border-box;
+            background-color: white;
+            border-radius: 15px;
+            padding: 15px;
+            width: 240px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4a90e2;
+            color: white;
+            cursor: pointer;
+        }
+
+        .print-button {
+            display: inline-block;
+            margin: 30px 10px 0;
+            padding: 12px 22px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .print-button:hover,
+        button:hover {
+            background-color: #357abd;
+        }
+
+        .back-button {
+            margin-top: 30px;
+            display: inline-block;
+            text-decoration: none;
+            background-color: #555;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 850px) {
+            .cards {
+                grid-template-columns: repeat(2, 240px);
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .cards {
+                grid-template-columns: 240px;
+                gap: 25px;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            h1,
+            .card h2,
+            .card button,
+            .print-button,
+            .back-button {
+                display: none !important;
+            }
+
+            .cards {
+                display: block;
+                margin: 0;
+                padding: 0;
+            }
+
+            .card {
+                box-sizing: border-box;
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 10mm;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                border-radius: 0;
+                box-shadow: none;
+                break-after: page;
+                page-break-after: always;
+            }
+
+            .card:last-child {
+                break-after: auto;
+                page-break-after: auto;
+            }
+
+            .card img {
+                display: block;
+                width: 190mm;
+                height: 270mm;
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Jobs & Occupations</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="images/teacher.png" alt="Teacher">
+            
+            <button onclick="speak('Teacher')">Listen 🔊</button>
+        </div>
+
+        <div class="card">
+            <img src="images/doctor.png" alt="Doctor">
+            
+            <button onclick="speak('Doctor')">Listen 🔊</button>
+        </div>
+
+        <div class="card">
+            <img src="images/nurse.png" alt="Nurse">
+                        <button onclick="speak('Nurse')">Listen 🔊</button>
+        </div>
+
+        <div class="card">
+            <img src="images/mechanic.png" alt="Mechanic">
+            
+            <button onclick="speak('Mechanic')">Listen 🔊</button>
+        </div>
+
+        <div class="card">
+            <img src="images/farmer.png" alt="Farmer">
+            
+            <button onclick="speak('Farmer')">Listen 🔊</button>
+        </div>
+
+        <div class="card">
+            <img src="images/engineer.png" alt="Engineer">
+            
+            <button onclick="speak('Engineer')">Listen 🔊</button>
+        </div>
+
+        <div class="card">
+            <img src="images/baker.png" alt="Baker">
+            
+            <button onclick="speak('Baker')">Listen 🔊</button>
+        </div>
+
+        <div class="card">
+            <img src="images/firefighter.png" alt="Firefighter">
+            
+            <button onclick="speak('Firefighter')">Listen 🔊</button>
+        </div>
+
+        <div class="card">
+            <img src="images/policeman.png" alt="Policeman">
+            
+            <button onclick="speak('Policeman')">Listen 🔊</button>
+        </div>
+
+        <div class="card">
+            <img src="images/postman.png" alt="Postman">
+            
+            <button onclick="speak('Postman')">Listen 🔊</button>
+        </div>
+
+        <div class="card">
+            <img src="images/pilot.png" alt="Pilot">
+            
+            <button onclick="speak('Pilot')">Listen 🔊</button>
+        </div>
+
+        <div class="card">
+            <img src="images/vet.png" alt="Vet">
+            
+            <button onclick="speak('Vet')">Listen 🔊</button>
+        </div>
+
+    </div>
+
+    <button class="print-button" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+    <a href="4ap-sequence1.html" class="back-button">
+        ← Back to Sequence 01
+    </a>
+
+    <script>
+        function speak(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-GB";
+            speech.rate = 0.8;
+            speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

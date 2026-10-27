@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Destinations and Places - 5AP</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 25px;
+            background: #fff7fb;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d63384;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .flashcards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #f8d7e8;
+            border-radius: 16px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px #00000010;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card img {
+            width: 270px;
+            height: 270px;
+            max-width: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .listen-button {
+            background: #d63384;
+            color: white;
+            border: none;
+            padding: 11px 22px;
+            border-radius: 9px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .listen-button:hover {
+            background: #ad2167;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 35px auto 10px;
+            padding: 12px 22px;
+            background: #d63384;
+            color: white;
+            text-decoration: none;
+            border-radius: 9px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            .flashcards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 15px;
+            }
+
+            .flashcards {
+                grid-template-columns: 1fr;
+            }
+
+            .card img {
+                width: 270px;
+                height: 270px;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            html,
+            body {
+                width: 210mm;
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            h1,
+            .subtitle,
+            .listen-button,
+            .back-button,
+            body > div[style] {
+                display: none !important;
+            }
+
+            .flashcards {
+                display: block;
+                width: 210mm;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 210mm;
+                height: 297mm;
+
+                margin: 0;
+                padding: 10mm;
+
+                background: white;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+
+                break-after: page;
+                page-break-after: always;
+            }
+
+            .card img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                max-width: 190mm;
+                max-height: 277mm;
+                margin: 0;
+                object-fit: contain;
+            }
+
+            .card:last-child {
+                break-after: auto;
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Destinations and Places</h1>
+
+    <p class="subtitle">
+        Explore different places around the world!
+    </p>
+
+    <div class="flashcards">
+
+        <div class="card">
+            <img src="images/desert.png" alt="Desert">
+            <button class="listen-button" onclick="speak('Desert')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/lake.png" alt="Lake">
+            <button class="listen-button" onclick="speak('Lake')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/camp.png" alt="Camp">
+            <button class="listen-button" onclick="speak('Camp')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/forest.png" alt="Forest">
+            <button class="listen-button" onclick="speak('Forest')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/beach.png" alt="Beach">
+            <button class="listen-button" onclick="speak('Beach')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/park.png" alt="Park">
+            <button class="listen-button" onclick="speak('Park')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/river.png" alt="River">
+            <button class="listen-button" onclick="speak('River')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/mountain.png" alt="Mountain">
+            <button class="listen-button" onclick="speak('Mountain')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <div class="card">
+            <img src="images/countryside.png" alt="Countryside">
+            <button class="listen-button" onclick="speak('Countryside')">
+                🔊 Listen
+            </button>
+        </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:20px;">
+        <button class="listen-button" onclick="window.print()">
+            🖨 Print Flashcards
+        </button>
+    </div>
+
+    <a href="5apsequence3.html" class="back-button">
+        &larr; Back to Sequence 03
+    </a>
+
+    <script>
+        function speak(word) {
+            speechSynthesis.cancel();
+
+            const speech = new SpeechSynthesisUtterance(word);
+            speech.lang = "en-GB";
+            speech.rate = 0.8;
+
+            speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

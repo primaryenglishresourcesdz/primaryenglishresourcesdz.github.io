@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3AP - School Subjects</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .subject-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .subject-card img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        h2 {
+            margin-top: 15px;
+            font-size: 20px;
+        }
+
+        .listen-button {
+            margin-top: 10px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            background: #333;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .listen-button:hover {
+            background: #555;
+        }
+
+        .bottom-buttons {
+            clear: both;
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .bottom-buttons button,
+        .back-button {
+            display: inline-block;
+            margin: 5px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .back-button {
+            background: #333;
+            color: white;
+        }
+
+        .print-button {
+            background: #4a90e2;
+            color: white;
+        }
+
+        .print-button:hover {
+            background: #357abd;
+        }
+
+        @media (max-width: 900px) {
+            .subjects {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .subjects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* PRINTING */
+
+        @media print {
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            h1,
+            body > p,
+            .listen-button,
+            .bottom-buttons,
+            .subject-card h2 {
+                display: none;
+            }
+
+            .subjects {
+                display: block;
+                margin: 0;
+                padding: 0;
+                max-width: none;
+            }
+
+            .subject-card {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+                background: white;
+                border-radius: 0;
+                box-shadow: none;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .subject-card:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .subject-card img {
+                width: 190mm;
+                height: 270mm;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📚 School Subjects</h1>
+    <p>Learn the names of school subjects</p>
+
+    <div class="subjects">
+
+        <!-- English -->
+        <div class="subject-card">
+            <img src="images/english.png" alt="English">
+            <h2>English</h2>
+            <button class="listen-button" onclick="speak('English')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- Maths -->
+        <div class="subject-card">
+            <img src="images/maths.png" alt="Maths">
+            <h2>Maths</h2>
+            <button class="listen-button" onclick="speak('Maths')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- Science and Technology -->
+        <div class="subject-card">
+            <img src="images/scienceandtechnology.png" alt="Science and Technology">
+            <h2>Science and Technology</h2>
+            <button class="listen-button" onclick="speak('Science and Technology')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- History and Geography -->
+        <div class="subject-card">
+            <img src="images/historyandgeography.png" alt="History and Geography">
+            <h2>History and Geography</h2>
+            <button class="listen-button" onclick="speak('History and Geography')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- Arabic -->
+        <div class="subject-card">
+            <img src="images/arabic.png" alt="Arabic">
+            <h2>Arabic</h2>
+            <button class="listen-button" onclick="speak('Arabic')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- French -->
+        <div class="subject-card">
+            <img src="images/french.png" alt="French">
+            <h2>French</h2>
+            <button class="listen-button" onclick="speak('French')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- Islamic Education -->
+        <div class="subject-card">
+            <img src="images/islamiceducation.png" alt="Islamic Education">
+            <h2>Islamic Education</h2>
+            <button class="listen-button" onclick="speak('Islamic Education')">
+                🔊 Listen
+            </button>
+        </div>
+
+        <!-- Civics -->
+        <div class="subject-card">
+            <img src="images/civics.png" alt="Civics">
+            <h2>Civics</h2>
+            <button class="listen-button" onclick="speak('Civics')">
+                🔊 Listen
+            </button>
+        </div>
+
+    </div>
+
+    <div class="bottom-buttons">
+        <a href="sequence2.html" class="back-button">
+            ← Back to Sequence 02
+        </a>
+
+        <button class="print-button" onclick="window.print()">
+            🖨️ Print Flashcards
+        </button>
+    </div>
+
+    <script>
+        function speak(word) {
+            const speech = new SpeechSynthesisUtterance(word);
+            speech.lang = "en-US";
+            speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>5AP - Weather</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff0f6;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #d63384;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 12px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card img {
+            width: 270px;
+            height: 270px;
+            max-width: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .card h2 {
+            color: #d63384;
+            font-size: 23px;
+            margin: 8px 0 0;
+        }
+
+        button {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 11px 22px;
+            margin-top: 10px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #b0256b;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #d63384;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            margin-top: 35px;
+        }
+
+        .back-button:hover {
+            background-color: #b0256b;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* A4 printing: one flashcard per page */
+        @media print {
+
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            html,
+            body {
+                width: 210mm;
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            h1,
+            p,
+            button,
+            .back-button,
+            br {
+                display: none !important;
+            }
+
+            .container {
+                display: block;
+                width: 210mm;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 210mm;
+                height: 297mm;
+
+                margin: 0;
+                padding: 10mm;
+
+                background: white;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .card:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .card h2 {
+                display: none !important;
+            }
+
+            .card img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                max-width: 190mm;
+                max-height: 277mm;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Weather</h1>
+    <p>5th Year Primary School – English Resources</p>
+
+    <div class="container">
+
+        <div class="card">
+            <img src="images/cloudy.png" alt="Cloudy weather">
+            
+            <button onclick="speak('Cloudy')">Listen</button>
+        </div>
+
+        <div class="card">
+            <img src="images/rainy.png" alt="Rainy weather">
+            
+            <button onclick="speak('Rainy')">Listen</button>
+        </div>
+
+        <div class="card">
+            <img src="images/stormy.png" alt="Stormy weather">
+            
+            <button onclick="speak('Stormy')">Listen</button>
+        </div>
+
+        <div class="card">
+            <img src="images/sunny.png" alt="Sunny weather">
+            
+            <button onclick="speak('Sunny')">Listen</button>
+        </div>
+
+        <div class="card">
+            <img src="images/snowy.png" alt="Snowy weather">
+            
+            <button onclick="speak('Snowy')">Listen</button>
+        </div>
+
+        <div class="card">
+            <img src="images/windy.png" alt="Windy weather">
+            
+            <button onclick="speak('Windy')">Listen</button>
+        </div>
+
+        <div class="card">
+            <img src="images/hot.png" alt="Hot weather">
+            
+            <button onclick="speak('Hot')">Listen</button>
+        </div>
+
+        <div class="card">
+            <img src="images/cold.png" alt="Cold weather">
+            
+            <button onclick="speak('Cold')">Listen</button>
+        </div>
+
+        <div class="card">
+            <img src="images/warm.png" alt="Warm weather">
+            
+            <button onclick="speak('Warm')">Listen</button>
+        </div>
+
+    </div>
+
+    <button onclick="window.print()">Print Flashcards</button>
+
+    <br>
+
+    <a href="5apsequence3.html" class="back-button">
+        Back to Sequence 03
+    </a>
+
+    <script>
+        function speak(word) {
+            speechSynthesis.cancel();
+
+            const speech = new SpeechSynthesisUtterance(word);
+            speech.lang = "en-GB";
+            speech.rate = 0.8;
+
+            speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+
+</html>

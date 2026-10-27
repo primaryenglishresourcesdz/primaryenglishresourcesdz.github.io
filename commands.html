@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Commands</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .command-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px;
+            width: 250px;
+            display: inline-block;
+            vertical-align: top;
+            background-color: white;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .command-image {
+            width: 270px;
+            height: 270px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin: 10px 0;
+        }
+
+        .listen-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .print-button {
+            background-color: #333;
+            color: white;
+        }
+
+        .back-button {
+            background-color: #555;
+            color: white;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: white;
+            }
+
+            h1,
+            .command-card h2,
+            .listen-button,
+            .print-button,
+            .back-button,
+            br {
+                display: none !important;
+            }
+
+            .command-card {
+                width: 210mm;
+                height: 297mm;
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                background-color: white;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .command-card:last-of-type {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .command-image {
+                width: 190mm;
+                height: 270mm;
+                max-width: 190mm;
+                max-height: 270mm;
+                object-fit: contain;
+                border-radius: 0;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>School Commands</h1>
+
+    <div class="command-card">
+        <img src="./images/standup.png" alt="Stand up" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Stand up.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/sitdown.png" alt="Sit down" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Sit down.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/openbook.png" alt="Open your book" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Open your book.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/closebook.png" alt="Close your book" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Close your book.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/listen.png" alt="Listen" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Listen.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/look.png" alt="Look" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Look.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/repeat.png" alt="Repeat" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Repeat.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/read.png" alt="Read" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Read.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/write.png" alt="Write" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Write.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        
+        <img src="./images/bequiet.png" alt="Be quiet" class="command-image">
+        <button class="listen-button" onclick="speak('Be quiet.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/raiseyourhand.png" alt="Raise your hand" class="command-image">
+                <button class="listen-button" onclick="speak('Raise your hand.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/draw.png" alt="Draw" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Draw.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/colour.png" alt="Color" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Color.')">🔊 Listen</button>
+    </div>
+
+    
+    <div class="command-card">
+        <img src="./images/tick.png" alt="Tick" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Tick.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/cross.png" alt="Cross" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Cross.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/circle.png" alt="Circle" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Circle.')">🔊 Listen</button>
+    </div>
+
+    <div class="command-card">
+        <img src="./images/match.png" alt="Match" class="command-image">
+        
+        <button class="listen-button" onclick="speak('Match.')">🔊 Listen</button>
+    </div>
+
+    <br><br>
+
+    <button class="back-button" onclick="window.location.href='sequence1.html'">
+        ← Back to Sequence 1
+    </button>
+
+    <button class="print-button" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+    <script>
+        function speak(text) {
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-US";
+            speech.rate = 0.8;
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

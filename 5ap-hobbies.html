@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fff5f9;
+        }
+
+        header {
+            background-color: #fff0f6;
+            color: #c2185b;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .flashcards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .flashcard {
+            background-color: white;
+            border-radius: 15px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flashcard img {
+            width: 270px;
+            height: 270px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .listen-btn {
+            margin-top: 10px;
+            background-color: #e75480;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .listen-btn:hover {
+            background-color: #d9436f;
+        }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 20px;
+            background-color: #e75480;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .back-btn:hover {
+            background-color: #d9436f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        .print-btn {
+            display: block;
+            width: fit-content;
+            margin: 25px auto;
+            background-color: #e75480;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .print-btn:hover {
+            background-color: #d9436f;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .flashcards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .flashcard img {
+                width: 240px;
+                height: 240px;
+                max-width: 100%;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 480px) {
+            .flashcards {
+                grid-template-columns: 1fr;
+            }
+
+            .flashcard img {
+                width: 270px;
+                height: 270px;
+                max-width: 100%;
+            }
+        }
+
+        /* A4 PRINT SETTINGS */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            html,
+            body {
+                width: 210mm;
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            header,
+            .listen-btn,
+            .back-btn,
+            .print-btn,
+            footer,
+            .flashcard h2 {
+                display: none !important;
+            }
+
+            .container {
+                width: 210mm;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .flashcards {
+                display: block;
+                margin: 0;
+                padding: 0;
+            }
+
+            .flashcard {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 210mm;
+                height: 297mm;
+                min-height: 0;
+                margin: 0;
+                padding: 10mm;
+                box-sizing: border-box;
+                background: white;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .flashcard:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .flashcard img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                max-width: 190mm;
+                max-height: 277mm;
+                margin: 0;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Hobbies</h1>
+    <p>5th Year Primary School</p>
+</header>
+
+<div class="container">
+
+    <div class="flashcards">
+
+        <div class="flashcard">
+            <img src="images/reading.png" alt="Reading">
+            <button class="listen-btn" onclick="speak('Reading')">🔊 Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/playing.png" alt="Playing video games">
+            <button class="listen-btn" onclick="speak('Playing video games')">🔊 Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/football.png" alt="Playing football">
+            <button class="listen-btn" onclick="speak('Playing football')">🔊 Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/painting.png" alt="Painting">
+            <button class="listen-btn" onclick="speak('Painting')">🔊 Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/swimming.png" alt="Swimming">
+            <button class="listen-btn" onclick="speak('Swimming')">🔊 Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/camping.png" alt="Camping">
+            <button class="listen-btn" onclick="speak('Camping')">🔊 Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/watchingtv.png" alt="Watching TV">
+            <button class="listen-btn" onclick="speak('Watching TV')">🔊 Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/sports.png" alt="Sports">
+            <button class="listen-btn" onclick="speak('Sports')">🔊 Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/cooking.png" alt="Cooking">
+            <button class="listen-btn" onclick="speak('Cooking')">🔊 Listen</button>
+        </div>
+
+        <div class="flashcard">
+            <img src="images/singing.png" alt="Singing">
+            <button class="listen-btn" onclick="speak('Singing')">🔊 Listen</button>
+        </div>
+
+    </div>
+
+    <button class="print-btn" onclick="window.print()">
+        🖨️ Print Flashcards
+    </button>
+
+    <a href="5apsequence1.html" class="back-btn">
+        ← Back to Sequence 01
+    </a>
+
+</div>
+
+<footer>
+    Primary School English Teacher Resources
+</footer>
+
+<script>
+    function speak(text) {
+        const speech = new SpeechSynthesisUtterance(text);
+        speech.lang = "en-GB";
+        speech.rate = 0.8;
+        speechSynthesis.speak(speech);
+    }
+</script>
+
+</body>
+</html>
